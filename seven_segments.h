@@ -2,8 +2,6 @@
 #define CSE316_ASSIGNMENT2_SEVEN_SEGMENTS_H
 
 #include "tm4c123gh6pm.h"
-#include "seven_segments.c"
-
 #define SEVEN_SEGMENTS_DATA GPIO_PORTB_DATA_R
 
 void sevenSegmentsInit();

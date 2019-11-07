@@ -1,5 +1,7 @@
 #include "seven_segments.h"
+#include "seven_segments.c"
 #include "keypad.h"
+#include "keypad.c"
 
 int main() {
   sevenSegmentsInit();

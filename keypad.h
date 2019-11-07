@@ -2,7 +2,6 @@
 #define CSE316_ASSIGNMENT2_KEYPAD_H
 
 #include "tm4c123gh6pm.h"
-#include "keypad.c"
 #define KEYPAD_ROWS_DATA GPIO_PORTA_DATA_R
 #define KEYPAD_COLUMNS_DATA GPIO_PORTC_DATA_R
 
