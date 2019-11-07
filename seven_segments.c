@@ -14,7 +14,7 @@ void sevenSegmentsInit() {
 }
 
 void turnOffSevenSegments() {
-    SEVEN_SEGMENTS_DATA &= ~(0x7F);
+    SEVEN_SEGMENTS_DATA |= 0x7F;
 }
 
 void outputDigit(unsigned char digit) {
