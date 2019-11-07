@@ -1,7 +1,13 @@
 #include "keypad.h"
 #include "delay.h"
 
-unsigned int rows[] = {R1, R2, R3, R4};
+const unsigned int rows[] = {R1, R2, R3, R4};
+const char keypad_seven_segments_map[] = {
+        0x1, 0x2, 0x3, 0xA,
+        0x4, 0x5, 0x6, 0xB,
+        0x7, 0x8, 0x9, 0xC,
+        0xE, 0x0, 0xF, 0xD
+};
 
 void initKeyPad() {
     SYSCTL_RCGCGPIO_R |= SYSCTL_RCGCGPIO_R0 | SYSCTL_RCGCGPIO_R2;
@@ -56,5 +62,6 @@ char getPressedKey() {
         return -1;
 
     char pressedColumnIndex = getColumnIndex(pressedColumn);
-    return pressedRowIndex*4 + pressedColumnIndex;
+    unsigned char keypadIndex = pressedRowIndex*4 + pressedColumnIndex;
+    return keypad_seven_segments_map[keypadIndex];
 }
